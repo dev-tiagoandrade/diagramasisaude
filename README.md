@@ -5,6 +5,8 @@
 ---
 ### Pacientes
 
+```mermaid
+
 ---
 config:
   layout: fixed
