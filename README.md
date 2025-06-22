@@ -205,9 +205,11 @@ flowchart TD
     L7a --> L7b["Suporte Técnico"]
     L7b --> L7c["Chat de Suporte"]
 ```
-```mermaid
+
 
 ## Unidades de Saúde
+```mermaid
+---
 flowchart TD
     %% FLUXO DE CADASTRO
     subgraph Cadastro
