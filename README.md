@@ -1,11 +1,13 @@
-# diagramasisaude
+# Diagramas iSaúde
+---
+##Pacientes
 ```mermaid
 ---
 config:
   layout: fixed
 ---
 flowchart TD
-    A["Feed Principal"] --> B["Post Individual"] & C["Perfil de Outro Usuário"] & D["Explorar"] & E["Sua Saúde"] & F["Conversas"] & G["Criar Publicação"] & E1["Meu Perfil Saúde"]
+    A["Feed Principal"] --> B["Post Individual"] & C["Perfil de Outro Usuário"] & D["Explorar"] & E["Sua Saúde"] & F["Conversas"] & G["Criar Publicação"] & E1["Meu Perfil"]
     B --> B1["Comentários"] & B2["Curtir Post"] & B3["Salvar Post"] & B4["Compartilhar"] & B5["Denunciar Post"]
     B1 --> B1a["Responder Comentário"]
     C --> C1["Publicações do Usuário"] & C2["Seguir/Deixar de Seguir"] & C3["Enviar Mensagem"] & C4["Agendar Consulta"]
