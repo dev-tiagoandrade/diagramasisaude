@@ -205,6 +205,8 @@ flowchart TD
     L7a --> L7b["Suporte Técnico"]
     L7b --> L7c["Chat de Suporte"]
 ```
+```mermaid
+
 ## Unidades de Saúde
 flowchart TD
     %% FLUXO DE CADASTRO
@@ -280,4 +282,4 @@ flowchart TD
     X1 --> X11[Detalhes do Agendamento]
     X11 --> X12[Disponibilizar Prescrições/Exames]
     X11 --> X13[Gerenciar Pós-Atendimento]
-```mermaid
+```
