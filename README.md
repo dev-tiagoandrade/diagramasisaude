@@ -209,65 +209,25 @@ flowchart TD
 
 ## Unidades de Saúde
 ```mermaid
----
-config:
-  layout: dagre
----
 flowchart TD
-    %% PRIMEIRO ACESSO E VALIDAÇÃO
-    H[Validação de Documentos]
-    subgraph Validacao
-        H --> H1[Upload: Documento Oficial, Carteira Profissional, Selfie]
-        H1 --> H2[Validação em Segundo Plano]
-        H2 --> I[Menu Principal]
-    end
-
-    %% MENU PRINCIPAL
-    subgraph Menu
-        I --> J[Início / Feed]
-        I --> K[Explorar]
-        I --> L[Área Profissional]
-        I --> M[Conversas]
-    end
-
-    %% ÁREA PROFISSIONAL - CONFIGURAÇÃO INICIAL
-    subgraph Configuracao_Inicial
-        L --> N{Primeiro Acesso?}
-        N -->|Sim| O["Adicionar Informações: Horário de Funcionamento, Endereço, Serviços, Chave PIX"]
-        O --> P[Área Profissional Liberada]
-        N -->|Não| P
-    end
-
-    %% ÁREA PROFISSIONAL - GERENCIAMENTO
-    subgraph Gerenciamento
-        P --> Q[Horário de Atendimento]
-        P --> R[Serviços]
-        P --> S[Histórico de Atendimentos]
-        P --> T[Endereços]
-        P --> U[Financeiro]
-        P --> V[Relatórios]
-        P --> W[Avaliações]
-        P --> X[Agenda de Atendimentos]
-        P --> Y[Minha Equipe]
-        P --> Z[Painel de Recursos]
-    end
-
-    %% SUBFLUXOS DETALHADOS
-    %% Serviços
-    R --> R1[Novo Exame]
+    H["Validação de Documentos"] --> H1["Upload: Documento Oficial, Carteira Profissional, Selfie"]
+    H1 --> H2["Validação em Segundo Plano"]
+    H2 --> I["Menu Principal"]
+    I --> J["Início / Feed"] & K["Explorar"] & L["Área Profissional"] & M["Conversas"]
+    L --> N{"Primeiro Acesso?"}
+    N -- Sim --> O["Adicionar Informações: Horário de Funcionamento, Endereço, Serviços, Chave PIX"]
+    O --> P["Área Profissional Liberada"]
+    N -- Não --> P
+    P --> Q["Horário de Atendimento"] & R["Serviços"] & S["Histórico de Atendimentos"] & T["Endereços"] & U["Financeiro"] & V["Relatórios"] & W["Avaliações"] & X["Agenda de Atendimentos"] & Y["Minha Equipe"] & Z["Painel de Recursos"]
+    R --> R1["Novo Exame"] & R2["Novo Atendimento"]
     R1 --> R11["Definir: Exames, Valor, Dias de Atendimento"]
-    R --> R2[Novo Atendimento]
     R2 --> R21["Definir: Título, Descrição, Duração, Modalidade, Retorno, Valor"]
+    Y --> Y1["Vincular Profissional"]
+    Y1 --> Y11["Buscar por CPF/Registro"]
+    Y11 --> Y12["Validar Documentos"]
+    Y12 --> Y13["Confirmar Vinculação"]
+    X --> X1["Visualizar Agendamentos"]
+    X1 --> X11["Detalhes do Agendamento"]
+    X11 --> X12["Disponibilizar Prescrições/Exames"] & X13["Gerenciar Pós-Atendimento"]
 
-    %% Minha Equipe
-    Y --> Y1[Vincular Profissional]
-    Y1 --> Y11[Buscar por CPF/Registro]
-    Y11 --> Y12[Validar Documentos]
-    Y12 --> Y13[Confirmar Vinculação]
-
-    %% Agenda
-    X --> X1[Visualizar Agendamentos]
-    X1 --> X11[Detalhes do Agendamento]
-    X11 --> X12[Disponibilizar Prescrições/Exames]
-    X11 --> X13[Gerenciar Pós-Atendimento]
 ```
