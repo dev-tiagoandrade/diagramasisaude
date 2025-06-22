@@ -70,7 +70,7 @@ graph TD
 
 
 ```mermaid
-
+NEWLINE
 ---
 ### Pacientes
 
