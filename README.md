@@ -67,8 +67,10 @@ graph TD
     H9 --> Z
     I9 --> Z
 ```mermaid
+
 ---
 ### Pacientes
+
 ```mermaid
 ---
 config:
