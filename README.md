@@ -69,7 +69,6 @@ graph TD
     I9 --> Z
 ```
 
----
 ## Pacientes
 
 ```mermaid
@@ -127,7 +126,7 @@ flowchart TD
     D2 --> B
     C4a --> E3
 ````
----
+
 ## Profissionais
 
 ```mermaid
@@ -205,5 +204,7 @@ flowchart TD
     L7 --> L7a["FAQ"]
     L7a --> L7b["Suporte Técnico"]
     L7b --> L7c["Chat de Suporte"]
+```
+## Unidades de Saúde
 
 ```mermaid
