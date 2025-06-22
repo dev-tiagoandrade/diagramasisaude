@@ -215,7 +215,7 @@ config:
 ---
 flowchart TD
     %% PRIMEIRO ACESSO E VALIDAÇÃO
-    G --> H[Validação de Documentos]
+    H[Validação de Documentos]
     subgraph Validacao
         H --> H1[Upload: Documento Oficial, Carteira Profissional, Selfie]
         H1 --> H2[Validação em Segundo Plano]
