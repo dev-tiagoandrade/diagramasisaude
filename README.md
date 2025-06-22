@@ -210,6 +210,9 @@ flowchart TD
 ## Unidades de Saúde
 ```mermaid
 ---
+config:
+  layout: dagre
+---
 flowchart TD
     %% FLUXO DE CADASTRO
     subgraph Cadastro
