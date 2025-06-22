@@ -2,6 +2,73 @@
 
 ### Cadastro
 
+```mermaid
+graph TD
+    A[Tela Inicial] --> B[Boas-vindas]
+    B --> C{Criar conta ou Login?}
+    C -->|Login| D[Login]
+    C -->|Criar conta| E[Introdução]
+    
+    E --> F{Seleção de Perfil}
+    F -->|Paciente| G[Paciente]
+    F -->|Profissional Saúde| H[Fluxo Profissional]
+    F -->|Unidade Saúde| I[Fluxo Unidade Saúde]
+    F -->|Farmácia| J[Fluxo Farmácia]
+    
+    %% FLUXO PACIENTE
+    G --> G1[Dados Pessoais]
+    G1 --> G2[Contato]
+    G2 --> G3[Verificação]
+    G3 --> G4[Nome Usuário]
+    G4 --> G5[Senha]
+    G5 --> G6{Foto Perfil?}
+    G6 -->|Sim| G7[Upload Foto]
+    G6 -->|Não| G8[Finalizado]
+    G7 --> G8
+    
+    %% FLUXO PROFISSIONAL
+    H --> H1[Dados Pessoais]
+    H1 --> H2[Contato]
+    H2 --> H3[Verificação]
+    H3 --> H4[Informações Profissionais]
+    H4 --> H5[Nome Usuário]
+    H5 --> H6[Senha]
+    H6 --> H7{Foto Perfil?}
+    H7 -->|Sim| H8[Upload Foto]
+    H7 -->|Não| H9[Finalizado]
+    H8 --> H9
+    
+    %% FLUXO UNIDADE SAÚDE
+    I --> I1[Dados Jurídicos]
+    I1 --> I2[Responsável Técnico]
+    I2 --> I3[Contato]
+    I3 --> I4[Verificação]
+    I4 --> I5[Nome Usuário]
+    I5 --> I6[Senha]
+    I6 --> I7{Foto Perfil?}
+    I7 -->|Sim| I8[Upload Foto]
+    I7 -->|Não| I9[Finalizado]
+    I8 --> I9
+    
+    %% FLUXO FARMÁCIA
+    J --> I1
+    
+    %% SUBFLUXO LOGIN
+    D --> D1[CPF/CNPJ]
+    D1 --> D2[Senha]
+    D2 --> D3{Esqueci Senha?}
+    D3 -->|Sim| D4[Solicitar Redefinição]
+    D4 --> D5[Email com Link]
+    D5 --> D6[Nova Senha]
+    D6 --> D7[Confirmar Senha]
+    D7 --> D
+    D3 -->|Não| Z[Feed]
+    
+    G8 --> Z
+    H9 --> Z
+    I9 --> Z
+mermaid```
+
 ---
 ### Pacientes
 
