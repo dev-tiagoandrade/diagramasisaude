@@ -214,23 +214,6 @@ config:
   layout: dagre
 ---
 flowchart TD
-    %% FLUXO DE CADASTRO
-    subgraph Cadastro
-        A[Tela Inicial] --> B[Boas-Vindas]
-        B --> C[Criar Conta]
-        C --> D[Introdução: Vantagens]
-        D --> E[Continuar como Unidade de Saúde]
-        
-        E --> F1["Step 1: CNPJ, Razão Social, Nome Fantasia, Tipo de Unidade, Termos"]
-        F1 --> F2["Step 2: Responsável Técnico (CPF, Registro Profissional, Telefone)"]
-        F2 --> F3["Step 3: Endereço (CEP, Número, Complemento, Estado, Cidade)"]
-        F3 --> F4["Step 4: Contato (E-mail Institucional, Telefone) + Verificação"]
-        F4 --> F5["Step 5: Escolher Nome de Usuário"]
-        F5 --> F6["Step 6: Criar Senha"]
-        F6 --> F7[Foto de Perfil Opcional]
-        F7 --> G[Finalizar Cadastro]
-    end
-
     %% PRIMEIRO ACESSO E VALIDAÇÃO
     G --> H[Validação de Documentos]
     subgraph Validacao
