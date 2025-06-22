@@ -66,6 +66,7 @@ graph TD
     G8 --> Z
     H9 --> Z
     I9 --> Z
+```mermaid
 
 ---
 ### Pacientes
