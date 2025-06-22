@@ -206,5 +206,78 @@ flowchart TD
     L7b --> L7c["Chat de Suporte"]
 ```
 ## Unidades de Saúde
+flowchart TD
+    %% FLUXO DE CADASTRO
+    subgraph Cadastro
+        A[Tela Inicial] --> B[Boas-Vindas]
+        B --> C[Criar Conta]
+        C --> D[Introdução: Vantagens]
+        D --> E[Continuar como Unidade de Saúde]
+        
+        E --> F1["Step 1: CNPJ, Razão Social, Nome Fantasia, Tipo de Unidade, Termos"]
+        F1 --> F2["Step 2: Responsável Técnico (CPF, Registro Profissional, Telefone)"]
+        F2 --> F3["Step 3: Endereço (CEP, Número, Complemento, Estado, Cidade)"]
+        F3 --> F4["Step 4: Contato (E-mail Institucional, Telefone) + Verificação"]
+        F4 --> F5["Step 5: Escolher Nome de Usuário"]
+        F5 --> F6["Step 6: Criar Senha"]
+        F6 --> F7[Foto de Perfil Opcional]
+        F7 --> G[Finalizar Cadastro]
+    end
 
+    %% PRIMEIRO ACESSO E VALIDAÇÃO
+    G --> H[Validação de Documentos]
+    subgraph Validacao
+        H --> H1[Upload: Documento Oficial, Carteira Profissional, Selfie]
+        H1 --> H2[Validação em Segundo Plano]
+        H2 --> I[Menu Principal]
+    end
+
+    %% MENU PRINCIPAL
+    subgraph Menu
+        I --> J[Início / Feed]
+        I --> K[Explorar]
+        I --> L[Área Profissional]
+        I --> M[Conversas]
+    end
+
+    %% ÁREA PROFISSIONAL - CONFIGURAÇÃO INICIAL
+    subgraph Configuracao_Inicial
+        L --> N{Primeiro Acesso?}
+        N -->|Sim| O["Adicionar Informações: Horário de Funcionamento, Endereço, Serviços, Chave PIX"]
+        O --> P[Área Profissional Liberada]
+        N -->|Não| P
+    end
+
+    %% ÁREA PROFISSIONAL - GERENCIAMENTO
+    subgraph Gerenciamento
+        P --> Q[Horário de Atendimento]
+        P --> R[Serviços]
+        P --> S[Histórico de Atendimentos]
+        P --> T[Endereços]
+        P --> U[Financeiro]
+        P --> V[Relatórios]
+        P --> W[Avaliações]
+        P --> X[Agenda de Atendimentos]
+        P --> Y[Minha Equipe]
+        P --> Z[Painel de Recursos]
+    end
+
+    %% SUBFLUXOS DETALHADOS
+    %% Serviços
+    R --> R1[Novo Exame]
+    R1 --> R11["Definir: Exames, Valor, Dias de Atendimento"]
+    R --> R2[Novo Atendimento]
+    R2 --> R21["Definir: Título, Descrição, Duração, Modalidade, Retorno, Valor"]
+
+    %% Minha Equipe
+    Y --> Y1[Vincular Profissional]
+    Y1 --> Y11[Buscar por CPF/Registro]
+    Y11 --> Y12[Validar Documentos]
+    Y12 --> Y13[Confirmar Vinculação]
+
+    %% Agenda
+    X --> X1[Visualizar Agendamentos]
+    X1 --> X11[Detalhes do Agendamento]
+    X11 --> X12[Disponibilizar Prescrições/Exames]
+    X11 --> X13[Gerenciar Pós-Atendimento]
 ```mermaid
