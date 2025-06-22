@@ -1,6 +1,6 @@
 # Diagramas iSaúde
 
-### Cadastro
+## Fluxo Geral de Cadastro
 
 ```mermaid
 graph TD
@@ -67,10 +67,10 @@ graph TD
     G8 --> Z
     H9 --> Z
     I9 --> Z
-mermaid```
+```
 
 ---
-### Pacientes
+## Pacientes
 
 ```mermaid
 
@@ -126,5 +126,82 @@ flowchart TD
     Z6 --> Z6a["FaQ"] & Z6b["Suporte"]
     D2 --> B
     C4a --> E3
- 
+````
+---
+## Profissionais
+
+---
+config:
+  layout: dagre
+---
+flowchart TD
+    A["Login"] --> B["Validação Documental"]
+    B --> C["Área Profissional"]
+    C --> D["Meu Perfil"] & E["Minha Agenda"] & F["Serviços"] & G["Atendimentos"] & H["Financeiro"] & I["Relatórios"] & J["Publicações"] & K["Conversas"] & L["Configurações"]
+    D --> D1["Editar Perfil"] & D2["Visualizar Perfil Público"] & D3["Instituições Vinculadas"]
+    D1 --> D1a["Alterar Foto"] & D1b["Alterar Bio"] & D1c["Áreas de Atuação"] & D1d["Especialidades"] & D1e["Formação"]
+    D3 --> D3a["Buscar Instituição"]
+    E --> E1["Visualizar Agenda"] & E2["Adicionar Evento"] & E3["Bloquear Horários"]
+    E1 --> E1a["Visualização: Dia/Semana/Mês"]
+    E2 --> E2a["Tipo: Consulta/Reunião/Folga"]
+    E2a --> E2b["Definir Horário"]
+    E3 --> E3a["Selecionar Período"]
+    F --> F1["Meus Serviços"]
+    F1 --> F1a["Adicionar Serviço"] & F1b["Editar Serviço"]
+    F1a --> F1a1["Configurar Serviço"]
+    G --> G1["Próximos Atendimentos"] & G2["Histórico de Atendimentos"]
+    G1 --> G1a["Detalhes do Atendimento"]
+    G1a --> G1a1["Prontuário do Paciente"] & G1a2["Iniciar Atendimento"]
+    G1a1 --> G1a1a["Histórico Médico"] & G1a1b["Anotações Pré-Consulta"]
+    G1a2 --> G1a2a["Sala de Atendimento"]
+    G1a2a --> G1a2a3["Encerrar Atendimento"]
+    G1a2a3 --> GA1["Emitir Documentos"]
+    GA1 --> GA1a["Prescrição"] & GA1b["Atestado"] & GA1c["Solicitação de Exames"]
+    GA1a --> GA1a1["Selecionar Medicamentos"]
+    GA1a1 --> GA1a2["Adicionar Posologia"]
+    GA1a2 --> GA1a3["Assinar Digitalmente"]
+    GA1b --> GA1b1["Definir Período"]
+    GA1b1 --> GA1b2["CID-10"]
+    GA1b2 --> GA1b3["Assinar"]
+    GA1c --> GA1c1["Selecionar Exames"]
+    GA1c1 --> GA1c2["Adicionar Observações"]
+    GA1c2 --> GA1c3["Assinar"]
+    H --> H1["Extrato"]
+    H1 --> H1a["Filtrar por Período"]
+    H1a --> H1b["Detalhes de Transação"]
+    I --> I1["Relatório de Atendimentos"] & I2["Desempenho"] & I3["Análise de Pacientes"]
+    I1 --> I1a["Exportar PDF/CSV"]
+    I2 --> I2a["Avaliações"] & I2c["Taxa de Ocupação"]
+    I2a --> I2b["Responder Avaliação"]
+    I2c --> I2d["Horários Ociosos"]
+    I3 --> I3a["Fidelização"]
+    J --> J1["Criar Publicação"] & J2["Engajamento"] & J3["Impulsionar Publicação"]
+    J1 --> J1a["Tipo: Texto/Imagem/Vídeo/Pulse"]
+    J1a --> J1b["Adicionar Conteúdo"]
+    J1b --> J1c["Adicionar Hashtags"]
+    J1c --> J1d["Publicar"]
+    J2 --> J2a["Curtidas"] & J2c["Comentários"]
+    J2a --> J2b["Ver Perfis"]
+    J2c --> J2d["Responder"]
+    J3 --> J3a["Selecionar Orçamento"]
+    J3a --> J3b["Definir Público-Alvo"]
+    J3b --> J3c["Confirmar"]
+    K --> K1["Conversas"]
+    K1 --> K1a["Nova Mensagem"] & K2["Conversa Existente"]
+    K1a --> K1b["Selecionar Contato"]
+    K1b --> K1c["Enviar Mensagem"]
+    K2 --> K2a["Histórico de Mensagens"] & K2e["Iniciar Videochamada"]
+    K2a --> K2b["Enviar Nova Mensagem"]
+    K2b --> K2c["Anexar Documento"]
+    K2c --> K2d["Selecionar do Prontuário"]
+    K2e --> K2f["Sala de Atendimento"]
+    L --> L1["Informações Profissionais"] & L2["Preferências de Agenda"] & L4["Privacidade"] & L5["Notificações"] & L6["Acessibilidade"] & L7["Central de Ajuda"] & L8["Sair"]
+    L1 --> L1a["Atualizar Registro"]
+    L1a --> L1b["Documentos Comprobatórios"]
+    L2 --> L2a["Horário Comercial"]
+    L2a --> L2b["Bloqueios Recorrentes"]
+    L7 --> L7a["FAQ"]
+    L7a --> L7b["Suporte Técnico"]
+    L7b --> L7c["Chat de Suporte"]
+
 ```mermaid
