@@ -1,6 +1,6 @@
 # Diagramas iSaúde
 ---
-###Pacientes
+### Pacientes
 ```mermaid
 ---
 config:
